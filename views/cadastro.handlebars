@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Cadastro de produto:</h2>
+  <form action="/cadastro" method="post">
+    <div class="input-box">
+      <label for="nome_do_produto">Nome:</label>
+      <input type="text" name="nome_do_produto" id="nome_do_produto" placeholder="ex: Bola de futebol" required>
+    </div>
+    <div class="input-box">
+      <label for="codigo_do_produto">Código do produto:</label>
+      <input type="text" name="codigo_do_produto" id="codigo_do_produto" placeholder="ex: 4654651345fadfas6465" required>
+    </div>
+    <div class="input-box">
+      <label for="descricao_do_produto">Descrição:</label>
+      <textarea name="descricao_do_produto" id="descricao_do_produto" placeholder="ex: tamanho, cor, marca" required></textarea>
+    </div>
+    <div class="input-box">
+      <label for="preco_do_produto">Preço:</label>
+      <input type="number" name="preco_do_produto" id="preco_do_produto" placeholder="R$ 50,00" required>
+    </div>
+    <input class="btn-cadastrar" type="submit" value="Cadastrar">
+  </form>
+</div>
