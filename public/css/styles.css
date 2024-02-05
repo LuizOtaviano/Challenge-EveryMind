@@ -7,10 +7,11 @@
 
 :root {
   --maincolor: #ff8c00;
+  --background: #222222;
 }
 
 header {
-  background-color: black;
+  background-color: var(--background);
   height: 100px;
   color: white;
   display: flex;
@@ -27,7 +28,7 @@ header > div#logo {
 
 div#logo > div#text-logo h1 {
   font-size: 1.5em;
-  font-family: 'Sixtyfour', sans-serif;
+  font-family: "Sixtyfour", sans-serif;
 }
 
 div#logo > div#icon-logo {
@@ -37,7 +38,6 @@ div#logo > div#icon-logo {
 
 nav {
   height: 100%;
-  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,39 +68,75 @@ nav li:hover {
   cursor: pointer;
 }
 
-div#profile {
-  width: 80px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 15px 25px;
-  border: 5px solid transparent;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-div#profile > abbr {
-  text-decoration: none;
-}
-
-div#profile:hover {
-  border: 5px solid var(--maincolor);
-}
-
 /* MAIN */
 
+body {
+  background-color: var(--background);
+}
+
+hr {
+  border: 2px solid var(--maincolor);
+}
+
 main {
-  height: 500px;
+  height: calc(100vh - 158px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  background-color: var(--maincolor);
+  width: 600px;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.container h2 {
+  margin-bottom: 15px;
+  border-left: 5px solid var(--maincolor);
+  padding-left: 10px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-box label {
+  margin-bottom: 5px;
+}
+
+.input-box input,
+textarea {
+  padding: 8px;
+  font-size: 1.1em;
+  border: 3px solid var(--maincolor);
+}
+
+.btn-cadastrar {
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: 3px solid transparent;
+  background-color: transparent;
+  color: var(--maincolor);
+  border: 3px solid var(--maincolor);
+  border-radius: 15px;
+  transition: background-color 1.3s;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+.btn-cadastrar:hover {
+  background-color:  var(--maincolor);
+  color: white;
 }
 
 /* FOOTER */
@@ -110,8 +146,6 @@ footer {
   padding: 20px;
   color: white;
   font-weight: bold;
-  position: fixed;
-  bottom: 0;
   display: flex;
   justify-content: center;
 }
