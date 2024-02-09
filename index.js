@@ -23,6 +23,9 @@ const Product = require('./models/Product')
 
 // Routes
 app.use('/', productRoutes)
+app.use((req, res, next) => {
+  res.redirect('/home')
+})
 
 db.sync().then(() => {
   app.listen(port, () => {

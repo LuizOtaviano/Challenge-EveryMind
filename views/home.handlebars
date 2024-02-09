@@ -1,25 +1,30 @@
 <div class="container2">
-  <table>
-    <tr>
-      <th>Nome</th>
-      <th>Código</th>
-      <th>Descrição</th>
-      <th>Preço</th>
-      <th>Options</th>
-    </tr>
-    {{#each products}}
+  {{#if products}}
+    <table>
       <tr>
-        <td>{{this.nome_do_produto}}</td>
-        <td>{{this.codigo_do_produto}}</td>
-        <td>{{this.descricao_do_produto}}</td>
-        <td>R$ {{this.preco_do_produto}}</td>
-        <td id="options">
-          <a href="/edit/{{this.id}}"><i class="bi bi-pencil-fill"></i></a>
-          <form action="/delete/{{this.id}}" method="post">
-            <button type="submit"><i class="bi bi-trash-fill"></i></button>
-          </form>
-        </td>
+        <th>Nome</th>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Options</th>
       </tr>
-    {{/each}}
+      {{#each products}}
+        <tr>
+          <td>{{this.nome_do_produto}}</td>
+          <td>{{this.codigo_do_produto}}</td>
+          <td>{{this.descricao_do_produto}}</td>
+          <td>R$ {{this.preco_do_produto}}</td>
+          <td id="options">
+            <a href="/edit/{{this.id}}"><i class="bi bi-pencil-fill"></i></a>
+            <form action="/delete/{{this.id}}" method="post">
+              <button type="submit"><i class="bi bi-trash-fill"></i></button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+  {{else}}
+    <h1>Ainda não há produtos cadastrados.</h1>
+    <h2>Você pode cadastrar clicando na opção cadastro.</h2>
+  {{/if}}
   </table>
 </div>

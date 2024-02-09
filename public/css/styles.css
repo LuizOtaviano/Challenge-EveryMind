@@ -94,9 +94,17 @@ main {
 }
 
 .container2 {
-  height: 100%;
-  overflow-y: scroll;
+  height: calc(100vh - 190px);
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 h1, h2 {
+  color: white;
+  margin-bottom: 15px;
 }
 
 .container2 table {
