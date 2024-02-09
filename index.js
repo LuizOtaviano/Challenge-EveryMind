@@ -1,7 +1,6 @@
-require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT
+const port = 3000
 const db = require('./db/conn')
 const exphbs = require('express-handlebars')
 const productRoutes = require('./routes/produtsRoutes')
@@ -25,7 +24,7 @@ const Product = require('./models/Product')
 // Routes
 app.use('/', productRoutes)
 
-db.sync({force: true}).then(() => {
+db.sync().then(() => {
   app.listen(port, () => {
     console.log(`Server is runnig at port ${port}`)
   })

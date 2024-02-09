@@ -1,4 +1,9 @@
 <div class="container">
+  {{#if error}}
+    <div class="error">
+      <p>{{error}}</p>
+    </div>
+  {{/if}}
   <h2>Cadastro de produto:</h2>
   <form action="/cadastro" method="post">
     <div class="input-box">
@@ -17,6 +22,14 @@
       <label for="preco_do_produto">Preço:</label>
       <input type="number" name="preco_do_produto" id="preco_do_produto" placeholder="R$ 50,00" required>
     </div>
-    <input onclick="verify()" class="btn-cadastrar" type="submit" value="Cadastrar">
+    <input class="btn-cadastrar" type="submit" value="Cadastrar">
   </form>
 </div>
+<script>
+  const errorMessage = document.querySelector('.error')
+  if(errorMessage) {
+    setTimeout(() => {
+      errorMessage.style.display = 'none'
+    }, 5000)
+  }
+</script>

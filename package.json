@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/LuizOtaviano/Challenge-EveryMind#readme",
   "dependencies": {
-    "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
     "mysql2": "^3.9.1",
