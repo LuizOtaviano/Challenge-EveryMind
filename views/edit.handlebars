@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/styles.css" />
+<div class="container">
+  {{#if error}}
+    <div class="error">
+      <p>{{error}}</p>
+    </div>
+  {{/if}}
+  <h2>Edição de produto:</h2>
+  <form action="/edit" method="post">
+    <input type="hidden" name="id" value="{{product.id}}"/>
+    <div class="input-box">
+      <label for="nome_do_produto">Nome:</label>
+      <input
+        type="text"
+        name="nome_do_produto"
+        id="nome_do_produto"
+        value="{{product.nome_do_produto}}"
+        required
+      />
+    </div>
+    <div class="input-box">
+      <label for="codigo_do_produto">Código do produto:</label>
+      <input
+        type="text"
+        name="codigo_do_produto"
+        id="codigo_do_produto"
+        value="{{product.codigo_do_produto}}"
+        required
+      />
+    </div>
+    <div class="input-box">
+      <label for="descricao_do_produto">Descrição:</label>
+      <textarea
+        name="descricao_do_produto"
+        id="descricao_do_produto"
+        required
+      >{{product.descricao_do_produto}}</textarea>
+    </div>
+    <div class="input-box">
+      <label for="preco_do_produto">Preço:</label>
+      <input
+        type="number"
+        name="preco_do_produto"
+        id="preco_do_produto"
+        value="{{product.preco_do_produto}}"
+        required
+      />
+    </div>
+    <input type="submit" value="Salvar" class="btn-cadastrar">
+  </form>
+</div>
+<script>
+  const errorMessage = document.querySelector('.error') 
+  if(errorMessage) {
+    setTimeout(() => { errorMessage.style.display = 'none' }, 5000) 
+  }
+</script>
